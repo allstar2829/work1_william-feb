@@ -1,0 +1,347 @@
+@import url(./reset.css);
+@import url(./repeat.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
+
+ /* *{
+    outline: 1px solid red;
+}     */
+
+.wrapper{
+    background-image: url(../img/BGM2.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 70%;
+    background-attachment: fixed;
+    /* height: 100%;  沒用*/
+}
+
+/* --------------- container ---------------*/
+
+.grid_area{
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: 80px 450px auto;
+    grid-template-areas:
+        "side header "
+        "side main "
+        "side another_pd ";
+    margin: 0 auto;
+    height: 100%;
+}
+
+.container{
+    padding-bottom: 70px;
+    box-sizing: border-box;
+}
+
+/* headrer */
+
+.item-header {
+    grid-area: header;
+
+    margin-top: 50px;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.item-header a{
+    text-decoration: none;
+    color:black
+}
+
+/* sider */
+
+.item-side {
+    grid-area: side;
+    margin-top: 100px;
+    margin-left: 40px;
+}
+.pd_line{
+    width: 130px;
+    height: 1px;
+    background-color: #b1b1b1;
+    margin: 15px 0;
+}
+.item-side li a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid transparent;
+}
+.item-side h1{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #B1B1B1;
+}
+
+.item-side li{
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+    margin: 15px 0;
+    display: block;
+}
+.item-side li a:hover {
+    color: #333;
+    font-size: bold;
+    border-bottom: 1px solid #333;
+    transition: .5s;
+}
+.item-side ul{
+    margin-bottom: 100px;
+}
+
+/* item_main products */
+.item-main{
+    grid-area: main;
+}
+.item-main-flex{
+    display: flex;
+    margin-bottom: 80px;
+    height: auto;
+}
+.pic{
+    margin: 50px 0px 0px 30px;
+}
+.item img {
+    height: 300px;
+    width: 300px;
+}
+.pic{
+    width: 300px;
+    height: 350px;
+}
+.pic>div{
+    width: 302px;
+}
+.pic img{
+    border: 1px solid rgb(173, 173, 173,.8);
+}
+.owl-carousel .owl-dots .owl-dot{
+    outline: none;
+}
+.context{
+    color: black;
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 450px;
+}
+.context h1{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 30px;
+}
+.context p{
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 30px;
+    line-height: 25px;
+}
+.context h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: left;
+}
+.btn{
+    display: flex;
+    justify-content: space-between;
+    margin:50px 0px 0 0;
+}
+
+.buy{
+    display: block;
+    width: 260px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    background-color: #D4BA71;
+    border: 1px solid white;
+}
+.cart{
+    display: block;
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #D4BA71;
+}
+.buy a{
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+.cart a{
+    display: block;
+    text-decoration: none;
+    color: #D4BA71;
+}
+.btn li:hover{
+    background-color: #63583ad0;
+    transition: .5s;
+}
+
+/* item-main-line */
+
+.item-main-line{
+    width: 800px;
+    height: 1px;
+    background-color: #707070;
+    margin: 20px 0 10px 20px;
+}
+
+/* another_pd */
+
+.another_pd{
+    display: flex;
+    margin-top: 65px;
+
+    grid-area: another_pd;
+}
+
+.another_pd span{
+    display: block;
+    margin: 10px 50px;
+    font-size: 1.3rem;
+}
+
+.owl-theme2{
+    width: 600px;
+    height: 130px;
+}
+
+.owl-theme2 .item2 {
+    height: 130px;
+    width: 130px;
+}
+
+.owl-theme2 .item2 img{
+    border: 1px solid rgb(173, 173, 173,.8);
+}
+.owl-theme2>div{
+    height: 133px;
+    width: 605px;
+}
+
+.footer{
+    background-color: rgb(212, 186, 113,0.5);
+}
+
+@media screen and (max-width: 428px){
+
+    html{
+        font-size: 75%;
+    }
+    .wrapper{
+        padding-bottom: 0vh;
+        height: auto;
+        background-size:200%;
+    }
+    .footer{
+        display: none;
+    }
+    .main{
+        width: 100%;
+    }
+    
+    /* bar */
+    .topbarbg{
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .top_bar {
+        height: 50px;
+        padding: 1vh 0;
+    }
+    .top_bar .nav1{
+        display: none;
+    }
+    .top_bar .nav2 li:not(:first-child){
+        display: none;
+        width: 30px;
+    }
+    .nav2 img{
+        width: 30px;
+        margin-right: 5vw;
+    }
+    .rwd_logo{
+        display: block;
+    }
+    .web_logo{
+        display: none;
+    }
+    .container{
+        padding-bottom: 0px;
+    }
+    .grid_area {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header "
+            "main "
+            "another_pd";
+        margin: 0 auto;
+        height: 100%;
+    }
+    .item-side{
+        display: none;
+    }
+    .item-main-flex{
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+    .item-header{
+        margin: 3vh 0 2vh 3vw;
+    }
+    .owl-carousel{
+        margin: 0px 0px 0px 0px;
+    }
+    .item img {
+        height: 100%;
+        width: 100%;
+    }
+    .pic{
+        width: 80vw;
+        height: auto;
+        margin: 0 auto;
+    }
+    .pic>div{
+        width: 85vw;
+    }
+    .context {
+        width: 80vw;
+        margin: 0vh auto 4vh;
+    }
+    .context h1{
+        text-align: left;
+        line-height: 3rem;
+    }
+    .item-main-line{
+        width: 80vw;
+        margin: 0 auto;
+    }
+    .another_pd{
+        width: 80vw;
+        overflow: hidden;
+        margin: 2vh auto;
+        display: block;
+    }
+    .another_pd span {
+        margin: 1vh 0px;
+
+    }
+    .another_pd li {
+        margin-right: 10px;
+    }
+    .another_pd img {
+        display: block;
+        width: 25vw;
+        
+    }
+
+}

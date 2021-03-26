@@ -1,0 +1,541 @@
+@import url(./reset.css);
+@import url(./repeat.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
+
+/* *{
+    outline: 1px solid red;
+}    */
+
+.wrapper{
+    background-image: url(../IMG/HP_1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 70px;
+}
+.main-area-up {
+    text-align: center;
+    /* outline: 1px solid orange; */
+    margin-bottom: 50px;
+}
+
+.main-area-up h1{
+    margin-top: 110px;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(226, 226, 226, 0.7);
+    opacity: 0;
+}
+
+.main-area-up h2{
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 1px rgba(226, 226, 226, 0.7);
+    opacity: 0;
+}
+.main-area-up .line{
+    width: 400px;
+    height: 1px;
+    background-color: #333;
+    margin: 50px auto;
+    margin-bottom: 20px;
+    opacity: 0;
+}
+
+.main-area-up p{
+    width: 650px;
+    margin: 50px auto;
+    font-weight: 500;
+    line-height: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(116, 116, 116, 0.5);
+    opacity: 0;
+}
+
+/*------------ Animation FOR INTRO------------*/
+
+.main-area-up h1{
+	animation: h1 1s ease-out forwards;
+}
+.main-area-up h2{
+	animation: h2 1s .5s ease-out forwards;
+}
+
+.main-area-up .line{
+    animation: li1 1s .5s ease-out forwards;
+}
+.main-area-up p{
+	animation: p 1s .8s ease-out forwards;
+}
+
+@keyframes h1{
+    0%{ transform: translateY(50px); opacity: 0; }
+	100%{ transform: translateY(0px); opacity: 1; }
+}
+@keyframes h2 {
+    0%{ transform: translateY(50px); opacity: 0; }
+	100%{ transform: translateY(0px); opacity: 1; }
+}
+@keyframes li1{
+    0%{ transform: translateY(50px); opacity: 0; }
+	100%{ transform: translateY(0px); opacity: 1; }
+}
+@keyframes p{
+    0%{ transform: translateY(50px); opacity: 0; }
+	100%{ transform: translateY(0px); opacity: 1; }
+}
+/*------------ Animation END------------*/
+
+.main-area-bt{
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+    width: 1000px;
+    height: 630px;
+    margin: 0 auto;
+    padding: 30px 30px;
+    /* margin-bottom: 50px; */
+    opacity: 0;
+    animation: pd1 1s 1s ease-out forwards;
+}
+@keyframes pd1{
+    0%{ transform: translateY(50px); opacity: 0; }
+	100%{ transform: translateY(0px); opacity: 1; }
+}
+
+.pd_area{
+    display: flex;
+    opacity: 1;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35px;
+}
+.coverflow{
+    width: 435px;
+    height: 435px;
+
+    position: relative;
+}
+.coverflow a{
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+    margin: 0px auto;
+    animation: silder 9s linear infinite;
+}
+
+/*------------ pic輪播------------*/
+@keyframes silder {
+    3% {opacity: 1;
+    filter: alpha(opacity=100);}
+    27% {opacity: 1;
+    filter: alpha(opacity=100);}
+    30% {opacity: 0;
+    filter: alpha(opacity=0);}
+}
+/*---每個圖片各延遲2秒---*/
+.coverflow>a:nth-child(3) {
+    animation-delay: 6s;               
+}
+.coverflow>a:nth-child(2) {
+    animation-delay: 3s;    
+}
+.coverflow>a:nth-child(1) {
+    animation-delay: 0s;
+}
+.coverflow img{
+    width: 100%;
+}
+/*---hover 效果---*/
+.coverflow span{
+    border: 3px solid transparent;
+    width: 400px;
+    height: 400px;
+
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.coverflow:hover span{
+    border: 3px solid #fff;
+    transition: .5s;
+}
+.coverflow:hover>a{
+    animation-play-state: paused;
+}
+/*------------ pic輪播 end------------*/
+.pd_img_a{
+    width: 500px;
+}
+.pd_img_a ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.pd_img_a li{
+    margin-bottom: 20px;
+}
+.pd_img_a li:hover{
+    transform: scale(1.03);
+    transition: .3s ease-in-out;
+}
+.pd_img_a img{
+    width: 200px;
+    outline: 1px solid #253c42;
+}
+.pd_img_a li:last-child{
+    display: block;
+    border: 1px solid gray;
+    background-color:rgba(255, 255, 255, 0.3);
+    width: 200px;
+    height: 200px;
+
+    position: relative;
+}
+.pd_img_a li:last-child a{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: block;
+    background-color: #b1b1b1;
+    width: 145px;
+    height: 50px;
+    text-align: center;
+
+    line-height: 50px;
+    text-decoration: none;
+    color: white;
+}
+.pd_img_a li:last-child a:hover{
+
+    background-color: #d8d8d8;
+    color: #686868;
+    transition: .5s;
+}
+.cz_page{
+    /* margin-top: 40px; */
+    position: relative;
+
+    margin: 0 auto;
+    width: 900px;
+    height: 100px;
+    display: block;
+
+    background-image: url(../IMG/CZBG.png);
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+.cz_page a{
+    display: block;
+    width: 900px;
+    height: 100px;
+}
+.cz_page:hover{
+    transform: scale(1.01);
+    opacity: .9;
+    transition: .3s ease-in-out;
+}
+
+.cz_page p{
+    position: absolute;
+    font-size: 2.3rem;
+    color: white;
+    font-weight: bold;
+    right: 100px;
+    bottom: 35%;
+}
+
+/* ---------------series product---------------*/
+
+.series_product{
+    background-image: url(../IMG/HP_2.png);
+    background-repeat: no-repeat;
+    background-position: top 0px left 20px;
+}
+
+.series_product-main{
+    display: flex;
+    justify-content: center;
+    height: 360px;
+}
+.series_product-main a{
+    text-decoration: none;
+    color: black;
+}
+.series_product-main li{
+    margin: 55px 10px;
+    height: 250px;
+    position: relative;
+    width: 350px;
+}
+.series_product-main img{
+    border-radius: 10px;
+    border: 1px soild #000000;
+    width: 100%;
+}
+.series_product-main h3{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    color: white;
+    font-size: 30px;
+    text-shadow: 1px 1px 1px #000;
+    text-align: center;
+    opacity: 0;
+    z-index: 3;
+    width: 320px;
+    height: 200px;
+    border: 1px solid white;
+    border-radius: 5px;
+    line-height: 180px;
+}
+
+.series_product-main li:hover h3{
+    opacity: 1;
+}
+.series_product-main p{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    font-weight: 500;
+}
+.series_product-main li:hover img{
+    filter: brightness(.5);
+    transition: .5s;
+}
+/* --------------- bottom area ---------------*/
+
+.bottom_area{
+    background-color: #000000;
+}
+
+.bottom_area ul{
+    display: flex;
+    justify-content:center;
+}
+
+.bottom_area li:hover{
+    filter:opacity(.7);
+    transition: .5s;
+}
+.bottom_area li{
+    width: 50%;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bottom_area_news{
+    background-image: url(../IMG/ns_bt.png);
+}
+.bottom_area_service{
+    background-image: url(../IMG/os_bt.png);
+}
+.bottom_area img{
+    display: block;
+    width: 49.4vw;
+}
+.bottom_area li{
+    position: relative;
+}
+.bottom_area h1{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #6e6e6e;
+}
+
+/* ------------RWD----------- */
+
+@media screen and (max-width: 428px){
+
+    html{
+        font-size: 75%;
+    }
+    .wrapper{
+        padding-bottom: 5vh
+    }
+    .footer{
+        display: none;
+    }
+    .main{
+        width: 100%;
+    }
+
+    /* bar */
+    .topbarbg{
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .top_bar {
+        height: 50px;
+        padding: 1vh 0;
+    }
+    .top_bar .nav1{
+        display: none;
+    }
+    .top_bar .nav2 li:not(:first-child){
+        display: none;
+        width: 30px;
+    }
+    .nav2 img{
+        width: 30px;
+        margin-right: 5vw;
+    }
+    .rwd_logo{
+        display: block;
+    }
+    .web_logo{
+        display: none;
+    }
+
+    /* top */
+
+    .main-area-up .line{
+        width: 50vw;
+        margin: 3vh auto;
+    }
+    .main-area-up h1{
+        font-size: 3.5rem;
+        margin-top:6vh;
+    }
+    .main-area-up h2{
+        margin: 3vh auto;
+        background-color: transparent;
+    }
+    .main-area-up p{
+        width: 70vw;
+        font-size: 1.2rem;
+        margin: 2vh auto
+    }
+    .main-area-up{
+        margin-bottom: 3vh;
+    }
+    .coverflow{
+        display: none;
+    }
+    .pd_area{
+        margin-left: 0;
+        height: 65%;
+        flex-direction: column;
+        padding-top: 4vh;
+        box-sizing: border-box;
+    }
+    .pd_img_a{
+        width: auto;
+    }
+    .pd_img_a ul{
+        width: auto;
+        margin-top: 0px;
+    }
+    .pd_img_a li{
+        margin-left: 2vw;
+    }
+    .pd_img_a li:first-child{
+        margin-left: 0vw;
+    }
+    .pd_img_a li:last-child{
+        display: none;
+    }
+    .pd_img_a img{
+        width: 25vw;
+    }
+    .all_pd_btn{
+        display: block;
+        width: 88%;
+    }
+    .all_pd_btn img{
+        display: block;
+        width: 100%;
+    }
+    .all_pd_btn:hover{
+        transform: scale(1.03);
+        transition: .3s ease-in-out;
+    }
+    .main-area-bt{
+        height: auto;
+        width: 93%;
+        border-radius: 15px;
+        margin: 0 auto;
+        padding: 0 0 3vh;
+    }
+    .cz_page{
+        width: 88%;
+        height: 8vh;
+        margin-top: 2.5vh;
+        background-size: cover;
+        border-radius: 5px;
+    }
+    .cz_page a{
+        display: block;
+        width: auto;
+        height: auto;
+    }
+    .cz_page p{
+        font-size: 2rem;
+        right: 40%;
+        bottom: 15%;
+    }
+
+    /* series_product */
+
+    .series_product{
+        background-size: 20%;
+    }
+    .series_product-main{
+        overflow: hidden;
+        height: 20vh;
+    }
+    .series_product-main ol {
+        padding-top: 2vh;
+        box-sizing: border-box;
+    }
+    .series_product-main li {
+        margin: 0px 0px;
+        height: 0px;
+        width: 100%;
+    }
+    .series_product-main h3{
+        display: none;
+    }
+    .series_product-main img{
+        border-radius: 0px;
+    }
+    .series_product-main p {
+        margin-top: 1vh;
+    }
+    
+    /* bottom */
+    .bottom_area h1{
+        font-size: 1.4rem;
+        width: 100%;
+        line-height: 1.6rem;
+    }
+    .bottom_area li{
+        height: 10vh;
+    }
+
+}
+
+@media screen and (max-width: 320px){
+    html{
+        font-size: 55%;
+    }
+}

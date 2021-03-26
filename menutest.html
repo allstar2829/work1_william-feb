@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        @import url(./CSS/reset.css);
+
+         *{
+            outline: 1px solid red;
+        } 
+
+        #menu{
+            width: 428px;
+            height: 845px;
+            background-color: #fff;
+        }
+        #menu h1, h2{
+            background-color: #E5E5E5;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color:black;
+            padding: 5px 0px;
+            text-align: center;
+        }
+        #menu h2{
+            margin-top: 10px;
+        }
+        #menu ul{
+            padding:0px 10px;
+        }
+        #menu li{
+            border-bottom: 1px solid #707070;
+            margin-top: 10px;
+            padding-bottom: 10px;
+        }
+        #menu a{
+            text-decoration: none;
+            color: #707070;
+        }
+        #menu a:hover{
+            color: #000;
+            transition: .5s;
+        }
+        .menu_pd_item{
+            width: 100%;
+            height: 200px;
+        }
+        .menu_pd_item tbody{
+            text-align: center;
+            vertical-align: middle;
+        }
+        .menu_pd_item td{
+            width: 33.3%;
+            vertical-align: middle;
+        }
+        .menu_pd_item tr:first-child{
+            border-bottom: 1px dotted black;
+        }
+        .menu_pd_item td{
+            border-right: 1px dotted black;
+        }
+        .menu_pd_item td:last-child{
+            border-right: none;
+        }
+        .menu_pd_item img{
+            width: 50px;
+        }
+        .menu_pd_list{
+            display: flex;
+            justify-content: space-between;
+        }
+        .menu_sm_list{
+            display: flex;
+            border-bottom: none;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+        .btn_close{
+            display: block;
+            margin: 30px auto 0px;
+            width: 100px;
+            height: 30px;
+            background-color: #fff;
+            border: 1px solid #707070;
+            outline: none;
+        }
+        .btn_close:hover{
+            background-color: #707070;
+            border: 1px solid #707070;
+            color: #fff;
+            outline: none;
+        }
+        .menu_pd_list_item.-none{
+            display: none;
+        }
+        .menu_pd_list_item{
+            display: block;
+            overflow: hidden;
+        }
+        .menu_pd_list_item b{
+            display: block;
+            width: 90%;
+            margin-bottom: 5px;
+            padding-top: 5px;
+            margin-left: 15px;
+            border-bottom: 1px dotted gray;
+        }
+        .menu_pd_list_item b:hover{
+            background-color: rgba(206, 206, 206, 0.3);
+            transition: .5s;
+        }
+        .menu_pd_list_btn{
+            margin-right: 5px;
+        }
+
+    </style>
+    
+    <div id=menu>
+        <h1>MENU</h1>
+        <ul>
+            <li>
+                <table class="menu_pd_item">
+                    <TR>
+                        <TD><a href=""><img src="./IMG/icon-ring.png"> <p>戒指 Rings</p></a></TD>
+                        <TD><a href=""><img src="./IMG/icons-nk.png"> <p>項鍊 Necklace</p></a></TD>
+                        <TD><a href=""><img src="./IMG/icon-store.png"> <p>店鋪資訊</p></a></TD>
+                    </TR>
+                    
+                    <TR>
+                        <TD> <a href=""><img src="./IMG/icons-bracelet.png"> <p>手環 Bracelet</p> </a></TD>
+                        <TD> <a href=""><img src="./IMG/icons-earring.png"> <p>耳環 Earrings</p></a></TD>
+                        <TD> <a href=""><img src="./IMG/icon-shoppingbag.png"> <p>購物袋</p></a></TD>
+                    </TR>
+                </table>
+            </li>
+            <li class="menu_pd_list">
+                <a href="#">全部商品</a>
+                <p class="menu_pd_list_btn">+</p>
+            </li>
+            <li class="menu_pd_list_item">
+                <ol>
+                    <b>商品主頁</b>
+                    <b>度假系列</b>
+                    <b>同名款系列</b>
+                    <b>BLACK</b>
+                    <b>LADY&FEB</b>
+                </ol>
+            </li>
+            <li><a href="#">專屬訂製</a></li>
+            <li><a href="#">關於我們</a></li>
+            <li><a href="#">服務專區</a></li>
+            <li><a href="#">新聞趨勢</a></li>
+        </ul>
+        <h2>FOLLOW US</h2>
+            <ol class="menu_sm_list">
+                <span> <img src="./IMG/icon-fb.png"><a href="#"> FACEBOOK</a></span>
+                <span> <img src="./IMG/icon-ig.png"><a href="#">INSTAGRAM</a></span>
+            </ol>
+
+        <button class="btn_close"> ╳　CLOSE </button>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>    
+	<script>
+
+        // 選單滑動效果
+        $(function(){
+            $(".menu_pd_list_btn").click(function(){
+            $(".menu_pd_list_item").slideToggle(".-none");
+            });
+        });
+	</script>
+
+
+</body>
+</html>
